@@ -1,0 +1,26 @@
+<h1>Listing xactions</h1>
+
+<table>
+  <tr>
+    <th>Accnum</th>
+    <th>When</th>
+    <th>What</th>
+    <th>Amount</th>
+  </tr>
+
+<% @xactions.each do |xaction| %>
+  <tr>
+    <td><%=h xaction.account_id %></td>
+    <td><%=h xaction.when %></td>
+    <td><%=h xaction.what %></td>
+    <td><%=h xaction.amount %></td>
+    <td><%= link_to 'Show', xaction %></td>
+    <td><%= link_to 'Edit', edit_xaction_path(xaction) %></td>
+    <td><%= link_to 'Destroy', xaction, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New xaction', new_xaction_path %>

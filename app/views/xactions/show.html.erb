@@ -1,0 +1,23 @@
+<p>
+  <b>Accnum:</b>
+  <%=h @xaction.account_id %>
+</p>
+
+<p>
+  <b>When:</b>
+  <%=h @xaction.when %>
+</p>
+
+<p>
+  <b>What:</b>
+  <%=h @xaction.what %>
+</p>
+
+<p>
+  <b>Amount:</b>
+  <%=h @xaction.amount %>
+</p>
+
+
+<%= link_to 'Edit', edit_xaction_path(@xaction) %> |
+<%= link_to 'Back', xactions_path %>

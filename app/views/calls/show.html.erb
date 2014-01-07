@@ -1,0 +1,23 @@
+<p>
+  <b>When:</b>
+  <%=h @call.when %>
+</p>
+
+<p>
+  <b>Basechrg:</b>
+  <%=h @call.basechrg %>
+</p>
+
+<p>
+  <b>Hits:</b>
+  <%=h @call.hits %>
+</p>
+
+<p>
+  <b>Hitchrg:</b>
+  <%=h @call.hitchrg %>
+</p>
+
+
+<%= link_to 'Edit', edit_call_path(@call) %> |
+<%= link_to 'Back', calls_path %>

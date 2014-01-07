@@ -1,0 +1,16 @@
+<h1>Editing billtime</h1>
+
+<% form_for(@billtime) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :when %><br />
+    <%= f.date_select :when %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @billtime %> |
+<%= link_to 'Back', billtimes_path %>

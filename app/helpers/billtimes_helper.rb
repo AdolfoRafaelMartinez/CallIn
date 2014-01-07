@@ -1,0 +1,2 @@
+module BilltimesHelper
+end

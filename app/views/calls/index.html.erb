@@ -1,0 +1,26 @@
+<h1>Listing calls</h1>
+
+<table>
+  <tr>
+    <th>When</th>
+    <th>Basechrg</th>
+    <th>Hits</th>
+    <th>Hitchrg</th>
+  </tr>
+
+<% @calls.each do |call| %>
+  <tr>
+    <td><%=h call.when %></td>
+    <td><%=h call.basechrg %></td>
+    <td><%=h call.hits %></td>
+    <td><%=h call.hitchrg %></td>
+    <td><%= link_to 'Show', call %></td>
+    <td><%= link_to 'Edit', edit_call_path(call) %></td>
+    <td><%= link_to 'Destroy', call, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New call', new_call_path %>

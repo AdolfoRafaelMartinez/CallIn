@@ -1,0 +1,20 @@
+<h1>Listing billtimes</h1>
+
+<table>
+  <tr>
+    <th>When</th>
+  </tr>
+
+<% @billtimes.each do |billtime| %>
+  <tr>
+    <td><%=h billtime.when %></td>
+    <td><%= link_to 'Show', billtime %></td>
+    <td><%= link_to 'Edit', edit_billtime_path(billtime) %></td>
+    <td><%= link_to 'Destroy', billtime, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New billtime', new_billtime_path %>

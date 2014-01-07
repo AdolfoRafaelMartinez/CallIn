@@ -1,0 +1,22 @@
+<h3>Bill</h3> 
+<b>AccNum:</b><%=h @account.accnum %><br>
+<b>Name:</b><%=h @account.accname %><br>
+<b>Escrow:</b><%=h @account.accescrw %><br>
+<b>Balance:</b><%=h "%.2f" % @account.xactions.sum("amount") %><br>
+<h2>XActions</h2> 
+<table border="1" cellspacing="1" cellpadding="3">
+   <tr>
+      <th>When</th>
+      <th>What</th>
+      <th align="right">Amount</th>
+   </tr>
+   <% @account.xactions.each do |c| %>  
+      <tr>
+         <td><%=h c.when %></td>
+         <td><%=h c.what %></td>
+         <td align="right"><%=h "%.2f" % c.amount %></td>
+      </tr>
+   <% end %> 
+</table>
+<br>
+<%= link_to 'Back', accounts_path %>

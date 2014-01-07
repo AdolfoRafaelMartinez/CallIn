@@ -1,0 +1,5 @@
+<% form_tag("/accounts/show", :method => "get") do %> 
+  <%= label_tag(:id, "Search for account:") %> 
+  <%= text_field_tag(:id) %> 
+  <%= submit_tag("Search") %> 
+<% end %> 

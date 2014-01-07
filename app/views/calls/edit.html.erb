@@ -1,0 +1,28 @@
+<h1>Editing call</h1>
+
+<% form_for(@call) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :when %><br />
+    <%= f.datetime_select :when %>
+  </p>
+  <p>
+    <%= f.label :basechrg %><br />
+    <%= f.text_field :basechrg %>
+  </p>
+  <p>
+    <%= f.label :hits %><br />
+    <%= f.text_field :hits %>
+  </p>
+  <p>
+    <%= f.label :hitchrg %><br />
+    <%= f.text_field :hitchrg %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @call %> |
+<%= link_to 'Back', calls_path %>

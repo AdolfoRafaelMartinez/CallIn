@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  accnum: 1
+  when: 2010-02-22 15:04:19
+  what: MyText
+  amount: 1.5
+
+two:
+  accnum: 1
+  when: 2010-02-22 15:04:19
+  what: MyText
+  amount: 1.5

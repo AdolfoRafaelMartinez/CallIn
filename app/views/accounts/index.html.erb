@@ -1,0 +1,27 @@
+<h1>Listing accounts</h1>
+
+<table border="1" cellspacing="1" cellpadding="3">
+  <tr>
+    <th align="right">AccNum</th>
+    <th>Name</th>
+    <th>Escrow</th>
+    <th align="right">Balance</th>
+    <th>Active</th>
+  </tr>
+<% @accounts.each do |account| %>
+  <tr>
+    <td align="right"><%=h account.accnum %></td>
+    <td><%=h account.accname %></td>
+    <td><%=h account.accescrw %></td>
+    <td align="right"><%=h "%.2f" % account.xactions.sum("amount") %></td>
+    <td><%=h account.active %></td>
+    <td><%= link_to 'Show', account %></td>
+    <td><%= link_to 'Edit', edit_account_path(account) %></td>
+    <td><%= link_to 'Destroy', account, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New account', new_account_path %>

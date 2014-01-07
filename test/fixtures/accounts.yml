@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  accnum: 1
+  accname: MyString
+  accescrw: 1.5
+
+two:
+  accnum: 1
+  accname: MyString
+  accescrw: 1.5

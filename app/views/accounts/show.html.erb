@@ -1,0 +1,41 @@
+<table border="0" cellspacing="0" cellpadding="3">
+<tr><td align="right" ><b>Account:</b></td><td><span style="font-size: large"><%=h @account.accnum %></td><td align="right" ></td><td><span style="font-size: medium"><h2><%=h @account.accname %></h2></span></td></tr>
+<tr><td align="right" >Escrow:</td><td>$<%=h @account.accescrw %></td></tr>
+<tr>
+  <td align="right" >Billed on:</td>
+  <td><% @a = Billtime.find(1) %><%= @a.when %></td>
+  <td align="right" ><b> for:</b></td>
+  <td>
+    <h2>$<%=h "%.2f" % @account.xactions.sum(:amount, :conditions => ["xactions.when < ?", @a.when]) %></h2>
+  </td>
+</tr>
+<tr>
+  <td align="right" >New charges:</td>
+  <td>$<%=h "%.2f" % @account.xactions.sum(:amount, :conditions => ["xactions.when >= ?", @a.when]) %></td>
+</tr>
+<tr><td align="right" >Active:</td><td><%=h @account.active %></td></tr>
+</table>
+<h3>Transactions</h3> 
+<table border="0" cellspacing="0" cellpadding="3" >
+<tr >
+   <th>When</th>
+   <th>What</th>
+   <th align="right">Amount</th>
+</tr>
+<% @account.xactions.each do |c| %>  
+  <% if c.amount < 0 %>
+    <tr bgcolor=#FFAEB0 >
+  <% else %>
+    <tr bgcolor=#CEFFAE >
+  <% end %>
+  <td><%=h c.when %></td>
+  <td><%=h c.what %></td>
+  <td align="right"><%=h "%.2f" % c.amount %></td>
+</tr>
+<% end %> 
+</table>
+<p>&nbsp</p>
+<% edit_account_path(@account) %>
+<%= link_to 'Edit', edit_account_path(@account) %> |
+<%= link_to 'Bill', 'http://www.cnn.com' %> |
+<%= link_to 'Back', accounts_path %>

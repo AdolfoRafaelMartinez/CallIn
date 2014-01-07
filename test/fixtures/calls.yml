@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  when: 2010-02-24 15:52:35
+  basechrg: 1.5
+  hits: 1
+  hitchrg: 1.5
+
+two:
+  when: 2010-02-24 15:52:35
+  basechrg: 1.5
+  hits: 1
+  hitchrg: 1.5
